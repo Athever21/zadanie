@@ -14,12 +14,12 @@ const Input = () => {
       let url;
       if (!projectId) {
         const { id } = await (
-          await fetch("http://recruitment01.vercel.app/api/init")
+          await fetch("https://recruitment01.vercel.app/api/init")
         ).json();
         setProjectId(id);
-        url = `http://recruitment01.vercel.app/api/project/${id}`;
+        url = `https://recruitment01.vercel.app/api/project/${id}`;
       } else {
-        url = `http://recruitment01.vercel.app/api/project/${projectId}`;
+        url = `https://recruitment01.vercel.app/api/project/${projectId}`;
       }
       const res = await axios.get(url);
 
