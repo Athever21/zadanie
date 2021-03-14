@@ -1,0 +1,107 @@
+@import "../../Vars.scss";
+
+.project-input {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+
+    label {
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+
+    input {
+      font-size: 1.1rem;
+      padding: 0.3rem 0.5rem;
+      border: 0;
+      border-radius: 10px;
+      background: $input;
+      width: 75%;
+
+      &::placeholder {
+        color: darken($font,10)
+      }
+    }
+  }
+
+  button {
+    margin-top: 0.5rem;
+    width: 50%;
+    background: $button;
+    border: 1px solid darken($button, 5);
+    padding: 0.3rem;
+    font-size: 1.2rem;
+
+    &:hover {
+      cursor: pointer;
+      background: lighten($button, 5);
+    }
+  }
+
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 1325px) {
+  .project-input {
+    div {
+      width: 60%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1107px) {
+  .project-input {
+    div {
+      width: 70%;
+    }
+  }
+}
+
+@media only screen and (max-width: 952px) {
+  .project-input {
+    div {
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 831px) {
+  .project-input {
+    div {
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (max-width: 737px) {
+  .project-input {
+    div {
+      width: 95%;
+
+      input {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .project-input {
+    div {
+      label {
+        font-size: 1.5rem;
+      }
+    }
+
+    button,input {
+      font-size: 1rem;
+    }
+  }
+}

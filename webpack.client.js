@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const cwd = process.cwd();
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   name: "browser",
@@ -44,6 +45,8 @@ module.exports = {
   plugins: [new webpack.HotModuleReplacementPlugin()],
   optimization: {
     emitOnErrors: false,
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],

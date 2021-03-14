@@ -1,6 +1,7 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const cwd = process.cwd();
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   name: "server",
@@ -23,4 +24,8 @@ module.exports = {
   resolve: {
     extensions: [".js", ".ts"],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()]
+  }
 };

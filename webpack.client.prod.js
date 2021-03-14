@@ -1,5 +1,6 @@
 const path = require("path");
 const cwd = process.cwd();
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   name: "browser",
@@ -7,7 +8,7 @@ module.exports = {
   entry: [path.join(cwd, "client", "index.tsx")],
   output: {
     path: path.join(cwd, "build"),
-    filename: "dist.js",
+    filename: "dist-[name].js",
     publicPath: "/build/",
   },
   module: {
@@ -38,6 +39,11 @@ module.exports = {
   },
   optimization: {
     emitOnErrors: false,
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+    splitChunks: {
+      chunks: "all"
+    }
   },
   resolve: {
     extensions: [".js", ".ts", ".tsx"],
